@@ -115,8 +115,19 @@
 
 .ct-tile__lock {
   flex-shrink: 0;
-  color: var(--ct-text);
+  width: 12.4px;
+  height: 15.75px;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
   filter: drop-shadow(0 0 1.5px rgba(0, 0, 0, 0.7));
+}
+
+@media (max-width: 767px) {
+  .ct-tile__lock {
+    width: 10.86px;
+    height: 13.82px;
+  }
 }
 
 .ct-tile__free {

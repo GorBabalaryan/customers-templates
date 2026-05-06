@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import type { Offer } from '../types'
-import { LockIcon } from './icons'
+import { LOCK_ICON_SRC } from './icons'
 import './OfferTile.css'
 
 export interface OfferTileProps {
@@ -54,7 +54,12 @@ export function OfferTile({ offer, active, onClick }: OfferTileProps) {
             <span className="ct-tile__free">FREE</span>
           ) : (
             <>
-              <LockIcon className="ct-tile__lock" />
+              <img
+                src={LOCK_ICON_SRC}
+                alt=""
+                className="ct-tile__lock"
+                draggable={false}
+              />
               <span className="ct-tile__free">FREE</span>
             </>
           )}

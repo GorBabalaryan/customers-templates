@@ -1,9 +1,11 @@
 import type { SVGProps } from 'react'
 import rollingOfferTitleDesktopUrl from '../assets/rolling-offer-title-desktop.png'
 import rollingOfferTitleMobileUrl from '../assets/rolling-offer-title-mobile.png'
+import lockIconUrl from '../assets/lock-20359a.png'
 
 export const ROLLING_OFFER_TITLE_DESKTOP_SRC = rollingOfferTitleDesktopUrl
 export const ROLLING_OFFER_TITLE_MOBILE_SRC = rollingOfferTitleMobileUrl
+export const LOCK_ICON_SRC = lockIconUrl
 
 export function ChevronRightIcon(props: SVGProps<SVGSVGElement>) {
   return (
@@ -45,39 +47,6 @@ export function ChevronDownIcon(props: SVGProps<SVGSVGElement>) {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-    </svg>
-  )
-}
-
-export function LockIcon(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      width="14"
-      height="16"
-      viewBox="0 0 14 16"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-      {...props}
-    >
-      <path
-        d="M3.25 6.5V4.25a3.75 3.75 0 0 1 7.5 0V6.5"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-      />
-      <rect
-        x="1.25"
-        y="6.5"
-        width="11.5"
-        height="8.25"
-        rx="1.6"
-        fill="currentColor"
-        stroke="currentColor"
-        strokeWidth="0.5"
-      />
-      <circle cx="7" cy="10.5" r="1.1" fill="rgba(0,0,0,0.35)" />
-      <rect x="6.4" y="10.5" width="1.2" height="2.4" rx="0.6" fill="rgba(0,0,0,0.35)" />
     </svg>
   )
 }
