@@ -75,9 +75,9 @@ export function SuccessScreen({ offer }: SuccessScreenProps) {
             scale: 0.45,
             opacity: 0,
             transition: {
-              y: { duration: 0.7, ease: [0.4, 0, 0.2, 1] },
-              scale: { duration: 0.7, ease: [0.4, 0, 0.2, 1] },
-              opacity: { duration: 0.7, ease: [0.4, 0, 1, 1], delay: 0.15 },
+              y: { duration: 0.5, ease: [0.4, 0, 0.2, 1] },
+              scale: { duration: 0.5, ease: [0.4, 0, 0.2, 1] },
+              opacity: { duration: 0.4, ease: [0.4, 0, 1, 1], delay: 0.1 },
             },
           }}
           transition={{
