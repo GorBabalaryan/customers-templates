@@ -17,13 +17,20 @@ import './RollingOffers.css'
 
 const DEFAULT_PROCESSING_MS = 1200
 const DEFAULT_SUCCESS_MS = 1500
-const SUCCESS_EXIT_MS = 800
-const REORGANIZE_MS = 1100
+const SUCCESS_EXIT_MS = 480
+const REORGANIZE_MS = 600
+
+const SMOOTH_EASE = [0.16, 1, 0.3, 1] as const
 
 const LAYOUT_TRANSITION = {
-  layout: { duration: 0.9, ease: [0.22, 1, 0.36, 1] as const },
-  opacity: { duration: 0.45, ease: 'easeOut' as const },
-  scale: { duration: 0.55, ease: [0.22, 1, 0.36, 1] as const },
+  layout: { duration: 0.55, ease: SMOOTH_EASE },
+  opacity: { duration: 0.4, ease: 'easeOut' as const },
+  scale: { duration: 0.5, ease: SMOOTH_EASE },
+}
+
+const CHEVRON_TRANSITION = {
+  layout: { duration: 0.55, ease: SMOOTH_EASE },
+  opacity: { duration: 0.3, ease: 'easeOut' as const },
 }
 
 export function RollingOffers({
@@ -180,12 +187,12 @@ export function RollingOffers({
                               ? 'ct-rolling-offers__chevron ct-rolling-offers__chevron--h'
                               : 'ct-rolling-offers__chevron ct-rolling-offers__chevron--v'
                           }
-                          layout
+                          layout="position"
                           aria-hidden="true"
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           exit={{ opacity: 0, transition: { duration: 0.05 } }}
-                          transition={LAYOUT_TRANSITION}
+                          transition={CHEVRON_TRANSITION}
                         >
                           <ChevronRightIcon className="ct-rolling-offers__chevron-h-icon" />
                           <ChevronDownIcon className="ct-rolling-offers__chevron-v-icon" />
