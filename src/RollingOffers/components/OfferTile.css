@@ -47,8 +47,8 @@
 }
 
 .ct-tile__image {
-  width: 70%;
-  height: 70%;
+  width: 55%;
+  height: 55%;
   object-fit: contain;
   pointer-events: none;
   user-select: none;
@@ -150,23 +150,27 @@
 
 @media (max-width: 767px) {
   .ct-tile {
-    width: var(--ct-tile-size-mobile);
-    height: var(--ct-tile-size-mobile);
+    width: 100%;
+    max-width: var(--ct-tile-size-mobile);
+    height: auto;
+    aspect-ratio: 1 / 1;
     border-radius: var(--ct-tile-radius-mobile);
   }
   .ct-tile__image-area {
-    height: var(--ct-tile-image-h-mobile);
+    flex: 1 1 auto;
+    height: auto;
     border-radius: var(--ct-tile-radius-mobile) var(--ct-tile-radius-mobile) 0 0;
   }
   .ct-tile__button {
-    height: var(--ct-tile-button-h-mobile);
+    flex: 0 0 21%;
+    height: auto;
     border-radius:
       0 0 var(--ct-tile-radius-mobile-button) var(--ct-tile-radius-mobile-button);
   }
   .ct-tile__button-inner {
     border-radius:
       0 0 var(--ct-tile-radius-mobile-button) var(--ct-tile-radius-mobile-button);
-    padding: var(--ct-button-padding-mobile);
+    padding: 4px 8px;
   }
   .ct-tile__free {
     font-size: var(--ct-price-size-mobile);

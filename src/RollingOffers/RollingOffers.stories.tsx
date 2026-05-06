@@ -4,77 +4,15 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { RollingOffers } from './RollingOffers'
 import type { Offer } from './types'
 
-const SAMPLE_IMAGE_GEM =
-  'data:image/svg+xml;utf8,' +
-  encodeURIComponent(`
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>
-      <defs>
-        <linearGradient id='g' x1='0' y1='0' x2='0' y2='1'>
-          <stop offset='0%' stop-color='%23B580FF'/>
-          <stop offset='100%' stop-color='%235A1FAA'/>
-        </linearGradient>
-      </defs>
-      <polygon points='32,4 58,24 48,58 16,58 6,24' fill='url(%23g)' stroke='%23380068' stroke-width='2.5' stroke-linejoin='round'/>
-      <polygon points='32,4 22,24 42,24' fill='%23E2C7FF' opacity='0.85'/>
-    </svg>
-  `)
-
-const SAMPLE_IMAGE_COIN =
-  'data:image/svg+xml;utf8,' +
-  encodeURIComponent(`
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>
-      <circle cx='32' cy='32' r='26' fill='%23FFC836' stroke='%23B27000' stroke-width='3'/>
-      <text x='50%' y='54%' text-anchor='middle' font-family='Lilita One, sans-serif' font-size='28' fill='%23B27000'>$</text>
-    </svg>
-  `)
-
-const SAMPLE_IMAGE_KEY =
-  'data:image/svg+xml;utf8,' +
-  encodeURIComponent(`
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>
-      <circle cx='22' cy='32' r='12' fill='none' stroke='%23FFD15A' stroke-width='5'/>
-      <rect x='32' y='28' width='28' height='8' fill='%23FFD15A'/>
-      <rect x='52' y='28' width='4' height='14' fill='%23FFD15A'/>
-      <rect x='44' y='28' width='4' height='10' fill='%23FFD15A'/>
-    </svg>
-  `)
-
-const SAMPLE_IMAGE_HEART =
-  'data:image/svg+xml;utf8,' +
-  encodeURIComponent(`
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>
-      <path d='M32 56s-22-12.6-22-28a12 12 0 0 1 22-6 12 12 0 0 1 22 6c0 15.4-22 28-22 28z' fill='%23FF4E5A' stroke='%237A0010' stroke-width='2.5'/>
-    </svg>
-  `)
-
-const SAMPLE_IMAGE_SCROLL =
-  'data:image/svg+xml;utf8,' +
-  encodeURIComponent(`
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>
-      <rect x='12' y='14' width='40' height='38' rx='4' fill='%23F5E1A6' stroke='%238A5C00' stroke-width='2.5'/>
-      <line x1='20' y1='24' x2='44' y2='24' stroke='%238A5C00' stroke-width='2'/>
-      <line x1='20' y1='32' x2='44' y2='32' stroke='%238A5C00' stroke-width='2'/>
-      <line x1='20' y1='40' x2='36' y2='40' stroke='%238A5C00' stroke-width='2'/>
-    </svg>
-  `)
-
-const SAMPLE_IMAGE_CHEST =
-  'data:image/svg+xml;utf8,' +
-  encodeURIComponent(`
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>
-      <rect x='10' y='28' width='44' height='24' rx='3' fill='%238A5C00' stroke='%23380000' stroke-width='2'/>
-      <path d='M10 28 Q32 12 54 28' fill='%23A66E00' stroke='%23380000' stroke-width='2'/>
-      <rect x='28' y='34' width='8' height='10' fill='%23FFD15A' stroke='%23380000' stroke-width='1.5'/>
-    </svg>
-  `)
+const TWEMOJI_BASE = 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg'
 
 const DEFAULT_OFFERS: Offer[] = [
-  { id: 'gem', name: 'Mystic Gem', imageUrl: SAMPLE_IMAGE_GEM, quantity: 30, badge: 'NEW' },
-  { id: 'scroll', name: 'Lucky Scroll', imageUrl: SAMPLE_IMAGE_SCROLL, quantity: 5 },
-  { id: 'coin', name: 'Gold Coin', imageUrl: SAMPLE_IMAGE_COIN, quantity: 100 },
-  { id: 'key', name: 'Royal Key', imageUrl: SAMPLE_IMAGE_KEY, quantity: 1 },
-  { id: 'heart', name: 'Health Potion', imageUrl: SAMPLE_IMAGE_HEART, quantity: 3 },
-  { id: 'chest', name: 'Treasure Chest', imageUrl: SAMPLE_IMAGE_CHEST, quantity: 1, badge: 'BEST' },
+  { id: 'gem', name: 'Mystic Gem', imageUrl: `${TWEMOJI_BASE}/1f48e.svg`, quantity: 30, badge: 'NEW' },
+  { id: 'scroll', name: 'Lucky Scroll', imageUrl: `${TWEMOJI_BASE}/1f4dc.svg`, quantity: 5 },
+  { id: 'coin', name: 'Gold Coin', imageUrl: `${TWEMOJI_BASE}/1fa99.svg`, quantity: 100 },
+  { id: 'key', name: 'Royal Key', imageUrl: `${TWEMOJI_BASE}/1f5dd.svg`, quantity: 1 },
+  { id: 'heart', name: 'Health Potion', imageUrl: `${TWEMOJI_BASE}/2764.svg`, quantity: 3 },
+  { id: 'chest', name: 'Treasure Chest', imageUrl: `${TWEMOJI_BASE}/1f4b0.svg`, quantity: 1, badge: 'BEST' },
 ]
 
 const meta: Meta<typeof RollingOffers> = {
