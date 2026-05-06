@@ -1,0 +1,23 @@
+html,
+body,
+#storybook-root {
+  margin: 0;
+  padding: 0;
+  font-family:
+    'Open Sans',
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#storybook-root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  padding: 24px;
+  box-sizing: border-box;
+}

@@ -1,0 +1,35 @@
+.ct-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--ct-overlay-bg);
+  border-radius: var(--ct-container-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  pointer-events: auto;
+}
+
+.ct-overlay__center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.ct-overlay__spinner {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.18);
+  border-top-color: #ffffff;
+  display: inline-block;
+}
+
+.ct-overlay__label {
+  font-family: var(--ct-font-display);
+  font-size: 16px;
+  color: var(--ct-text);
+  letter-spacing: 0.6px;
+  text-shadow: var(--ct-text-shadow);
+}

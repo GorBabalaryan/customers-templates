@@ -1,0 +1,174 @@
+.ct-tile {
+  position: relative;
+  width: var(--ct-tile-size-desktop);
+  height: var(--ct-tile-size-desktop);
+  padding: 0;
+  border: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: var(--ct-tile-radius-desktop);
+  background: var(--ct-tile-body);
+  overflow: visible;
+  cursor: default;
+  font-family: var(--ct-font-display);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: stretch;
+  isolation: isolate;
+}
+
+.ct-tile:disabled {
+  opacity: 1;
+}
+
+.ct-tile:focus-visible {
+  outline: 3px solid #ffd15a;
+  outline-offset: 3px;
+}
+
+.ct-tile--active {
+  cursor: pointer;
+}
+
+.ct-tile--locked .ct-tile__image-area {
+  filter: saturate(0.85) brightness(0.92);
+}
+
+.ct-tile__image-area {
+  position: relative;
+  height: var(--ct-tile-image-h-desktop);
+  background: var(--ct-tile-image-bg);
+  border-radius: var(--ct-tile-radius-desktop) var(--ct-tile-radius-desktop) 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.ct-tile__image {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+.ct-tile__quantity {
+  position: absolute;
+  right: 8px;
+  bottom: 6px;
+  color: var(--ct-text);
+  font-family: var(--ct-font-display);
+  font-size: 14px;
+  text-shadow: var(--ct-text-shadow);
+  background: rgba(0, 0, 0, 0.55);
+  padding: 1px 6px;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+}
+
+.ct-tile__badge {
+  position: absolute;
+  top: -8px;
+  left: -6px;
+  z-index: 2;
+  background: linear-gradient(180deg, #ff6b6b 0%, #b4161a 100%);
+  color: var(--ct-text);
+  font-family: var(--ct-font-display);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  text-shadow: var(--ct-text-shadow);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.ct-tile__button {
+  height: var(--ct-tile-button-h-desktop);
+  background: var(--ct-button-bg);
+  box-shadow: var(--ct-button-shadow);
+  border-radius: 0 0 var(--ct-tile-radius-desktop) var(--ct-tile-radius-desktop);
+  padding: 0;
+}
+
+.ct-tile__button-inner {
+  height: 100%;
+  background: var(--ct-button-gradient);
+  box-shadow: var(--ct-button-inner-shadow);
+  border-radius: 0 0 var(--ct-tile-radius-desktop) var(--ct-tile-radius-desktop);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.6px;
+  padding: var(--ct-button-padding-desktop);
+}
+
+.ct-tile--active .ct-tile__button {
+  background: var(--ct-active-button-bg);
+}
+
+.ct-tile--active .ct-tile__button-inner {
+  background: var(--ct-active-button-gradient);
+  box-shadow: var(--ct-active-button-shadow);
+}
+
+.ct-tile__lock {
+  flex-shrink: 0;
+  color: var(--ct-text);
+  filter: drop-shadow(0 0 1.5px rgba(0, 0, 0, 0.7));
+}
+
+.ct-tile__free {
+  font-family: var(--ct-font-display);
+  font-size: var(--ct-price-size-desktop);
+  color: var(--ct-text);
+  text-shadow: var(--ct-text-shadow);
+  letter-spacing: 0.4px;
+  line-height: 1;
+}
+
+.ct-tile__glow {
+  position: absolute;
+  inset: -4px;
+  border-radius: calc(var(--ct-tile-radius-desktop) + 4px);
+  pointer-events: none;
+  z-index: -1;
+  box-shadow: var(--ct-active-glow);
+  animation: ct-glow-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes ct-glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 18px rgba(255, 215, 60, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 32px rgba(255, 215, 60, 0.7);
+  }
+}
+
+@media (max-width: 767px) {
+  .ct-tile {
+    width: var(--ct-tile-size-mobile);
+    height: var(--ct-tile-size-mobile);
+    border-radius: var(--ct-tile-radius-mobile);
+  }
+  .ct-tile__image-area {
+    height: var(--ct-tile-image-h-mobile);
+    border-radius: var(--ct-tile-radius-mobile) var(--ct-tile-radius-mobile) 0 0;
+  }
+  .ct-tile__button {
+    height: var(--ct-tile-button-h-mobile);
+    border-radius:
+      0 0 var(--ct-tile-radius-mobile-button) var(--ct-tile-radius-mobile-button);
+  }
+  .ct-tile__button-inner {
+    border-radius:
+      0 0 var(--ct-tile-radius-mobile-button) var(--ct-tile-radius-mobile-button);
+    padding: var(--ct-button-padding-mobile);
+  }
+  .ct-tile__free {
+    font-size: var(--ct-price-size-mobile);
+  }
+}
