@@ -68,6 +68,9 @@
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .ct-rolling-offers__chevron {
@@ -80,6 +83,8 @@
   flex-shrink: 0;
   flex-basis: 24px;
   height: 24px;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .ct-rolling-offers__chevron-h-icon {

@@ -22,14 +22,23 @@ const REORGANIZE_MS = 600
 
 const SMOOTH_EASE = [0.16, 1, 0.3, 1] as const
 
+const APPLE_SPRING = {
+  type: 'spring' as const,
+  stiffness: 140,
+  damping: 22,
+  mass: 0.85,
+  restDelta: 0.0005,
+  restSpeed: 0.0005,
+}
+
 const LAYOUT_TRANSITION = {
-  layout: { duration: 0.55, ease: SMOOTH_EASE },
+  layout: APPLE_SPRING,
   opacity: { duration: 0.4, ease: 'easeOut' as const },
   scale: { duration: 0.5, ease: SMOOTH_EASE },
 }
 
 const CHEVRON_TRANSITION = {
-  layout: { duration: 0.55, ease: SMOOTH_EASE },
+  layout: APPLE_SPRING,
   opacity: { duration: 0.3, ease: 'easeOut' as const },
 }
 

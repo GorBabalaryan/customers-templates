@@ -186,4 +186,19 @@
   .ct-tile__free {
     font-size: var(--ct-price-size-mobile);
   }
+  .ct-tile__quantity {
+    right: 4px;
+    bottom: 3px;
+    font-size: 11px;
+    padding: 0 5px;
+    border-radius: 6px;
+    letter-spacing: 0.3px;
+  }
+  .ct-tile__badge {
+    top: -6px;
+    left: -4px;
+    font-size: 9px;
+    padding: 2px 6px;
+    border-radius: 5px;
+  }
 }
